@@ -1,0 +1,229 @@
+<!--
+created by:Jean Louis
+intial word prediction:Stanley Celestin
+date:7/2018
+
+this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+</head>
+<body>
+<h3>After pressing start press 'z' to make selections</h3>
+<hr>
+    <div >
+        <div id="chat-window" class="ex3"> 
+            <h4>Messages:</h4>
+        </div>
+     </div>
+
+    <div class="TTS">
+
+      <h4 id="msg">Speech Synth</h4>
+
+        <div class="option">
+            <label for="voice">Voice</label>
+            <select name="voice" id="voice"></select>
+        </div>
+        <div class="option">
+            <label for="volume">Voice Volume</label>
+            <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
+        </div>
+        <div class="option">
+            <label for="rate">Voice Speed</label>
+            <input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
+        </div>
+        <div class="option">
+            <label for="pitch">Voice Pitch</label>
+            <input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
+        </div>
+        <div class="option">
+            <label for="Hrate">Highlight Rate</label>
+            <input type="range" min=".05" max="2.5" step="0.1" name="pitch" id="Hrate" value="1">
+        </div>
+    </div>
+    <div class="Sentence">
+        <label>Sentence:</label>
+        <h3 id="output"></h3>
+    </div>
+<section>
+<div class="btn-group-vertical ml-4 mt-4" role="group" aria-label="Basic example" id="keybPad0">
+        <div class="btn-group suggestion" name="suggestion">
+            <button type="button" class="btn btn-outline-secondary rounded-0" id="output0">&#x1F354</button>
+            <button type="button" class="btn btn-outline-secondary" id="output1">&#x1F602</button>
+            <button type="button" class="btn btn-outline-secondary" id="output2">&#x1F60A</button>
+            <button type="button" class="btn btn-outline-secondary rounded-0" id="output3">&#x1F61E</button>
+            <button type="button" class="btn btn-outline-secondary" id="output4">&#x1F62E</button>
+        </div>  
+        <br>
+        <div class="btn-group" name="options">
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Letters</button>
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Numbers</button>
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Emoji</button>
+        </div> 
+        <div class="btn-group" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">A</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">E</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">I</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">O</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">U</button>
+        </div> 
+        <div class="btn-group" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">B</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">C</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">D</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">F</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">G</button>
+        </div> 
+        <div class="btn-group" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">H</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">J</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">K</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">L</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">M</button>
+        </div> 
+        <div class="btn-group" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">N</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">P</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">Q</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">R</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">S</button>
+        </div> 
+         <div class="btn-group" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">T</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">V</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">W</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">X</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">Y</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">Z</button>
+        </div> 
+         <div class="btn-group" name="functions">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">ENTER</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">[Space]</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">Backspace</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">ALT</button>
+        </div> 
+    </div>
+
+
+    <div class="btn-group-vertical ml-4 mt-4" role="group" aria-label="Basic example" id="keybPad1" style="display: none;">
+        <div class="btn-group suggestion" name="suggestion">
+            <button type="button" class="btn btn-outline-secondary rounded-0">&#x1F354</button>
+            <button type="button" class="btn btn-outline-secondary">&#x1F602</button>
+            <button type="button" class="btn btn-outline-secondary">&#x1F60A</button>
+            <button type="button" class="btn btn-outline-secondary rounded-0">&#x1F61E</button>
+            <button type="button" class="btn btn-outline-secondary">&#x1F62E</button>
+        </div>  
+        <br>
+        <div class="btn-group" name="options">
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Letters</button>
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Numbers</button>
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Emoji</button>
+        </div> 
+        <div class="btn-group" id="row2" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">0</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">1</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">2</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">3</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">4</button>
+        </div> 
+        <div class="btn-group" id="row2" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">5</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">6</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">7</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">8</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">9</button>
+        </div> 
+        <div class="btn-group" name="functions">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">ENTER</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">[Space]</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">Backspace</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">ALT</button>
+        </div> 
+    </div>
+    <div class="btn-group-vertical ml-4 mt-4" role="group" aria-label="Basic example" id="keybPad2" name="optionBtn" style="display: none">
+        <div class="btn-group suggestion" name="suggestion">
+            <button type="button" class="btn btn-outline-secondary rounded-0">&#x1F354</button>
+            <button type="button" class="btn btn-outline-secondary">&#x1F602</button>
+            <button type="button" class="btn btn-outline-secondary">&#x1F60A</button>
+            <button type="button" class="btn btn-outline-secondary rounded-0">&#x1F61E</button>
+            <button type="button" class="btn btn-outline-secondary">&#x1F62E</button>
+        </div>  
+        <br>
+        <div class="btn-group" name="options">
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Letters</button>
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Numbers</button>
+            <button type="button" class="button btn-outline-secondary border-bottom-0 rounded-0">Emoji</button>
+        </div> 
+        <div class="btn-group" id="row2"name="chars">
+            <button type="button" class="btn btn-outline-secondary rounded-0">😂</button>
+            <button type="button" class="btn btn-outline-secondary">😊</button>
+            <button type="button" class="btn btn-outline-secondary">😞</button>
+            <button type="button" class="btn btn-outline-secondary rounded-0">🤷</button>
+            <button type="button" class="btn btn-outline-secondary">😠</button>
+        </div> 
+        var emojis = ['😂','😊','😞','😮','🤷','😠','🖕','👎','👍','✊🏿','🥣','🥤','🛀','🚽','💤','💲','📰','📺','📻','🌡','⏳'];
+        <div class="btn-group" id="row2" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">👍</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">👎</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🥤</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">✊</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🥣</button>
+        </div> 
+         <div class="btn-group" id="row2" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🥤</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🥣</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🛀</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">💤</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">💲</button>
+        </div> 
+         <div class="btn-group" id="row2" name="chars">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🌡</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">⏳</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">📺</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">📰</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">🚽</button>
+        </div> 
+        <div class="btn-group" name="functions">
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">ENTER</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">[Space]</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">Backspace</button>
+            <button type="button" class="btn btn-outline-secondary border-bottom-0 rounded-0">ALT</button>
+        </div> 
+    </div>
+</section>
+<br>
+<button class ="button" onclick="myFunction()">Start</button>
+<button class ="button" onclick="myStopFunction()">Stop Row</button>
+
+<button class ="button" onclick="myStopInnerFunction()">Enter</button>
+<br>
+<br>
+<button class ="button" onclick="myGlobalStop()">stop all</button>
+
+
+<script src="js/Keyboard.js"></script>
+<script src="js/Dictionary.js"></script>
+<script src="js/TTS.js"></script>
+<script src="js/Predict.js"></script>
+</body>
+</html>
+
+
+
+
+
+

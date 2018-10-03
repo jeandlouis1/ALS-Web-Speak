@@ -1,0 +1,53 @@
+.red {
+background-color: red;
+    }
+.btn{
+background-color: white;
+color: black;
+border: 2px solid #4CAF50;
+border-radius: 4px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+padding: 10px 26px;
+}
+.button {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+padding: 10px 26px;
+ }
+ .Sentence{
+    border-style: groove;
+ }
+ .suggestion {
+   float: center;
+   text-align: center;
+ }
+ .k2 {
+   float: right;
+   text-align: right;
+ }
+ .keybPad {
+   float: left;
+   text-align: left;
+ }
+ .ex3 {
+    background-color: lightblue;
+    height: 150px;
+    width: 400px;    
+    
+}
+
+ #chat-window{
+    height: 150px;
+    overflow-y: auto;
+    width: 380px;
+    background: #f9f9f9;
+    float: left;
+    display: inline;
+
+}
+.TTS{
+     height: 150px;
+    border:5px solid black
+    width: 280px;
+    padding: 12px 12px;
+    overflow: auto;
+}
